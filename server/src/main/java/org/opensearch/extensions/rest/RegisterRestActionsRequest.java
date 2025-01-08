@@ -27,7 +27,7 @@ public class RegisterRestActionsRequest extends TransportRequest {
     private final RegisterRestActions request;
 
     public RegisterRestActionsRequest(String uniqueId, List<String> restActions, List<String> deprecatedRestActions) {
-        ExtensionIdentity identity = ExtensionIdentity.newBuilder().setUniqueId(uniqueId).build();
+        final ExtensionIdentity identity = ExtensionIdentity.newBuilder().setUniqueId(uniqueId).build();
         this.request = RegisterRestActions.newBuilder()
             .setIdentity(identity)
             .addAllRestActions(restActions)
